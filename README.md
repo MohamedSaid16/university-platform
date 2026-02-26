@@ -45,13 +45,69 @@ http://localhost:5173
 ## 📁 Project Structure
 
 ```
-src/
-├── assets/          # Images and static files
-├── components/      # Reusable components
-├── pages/          # Page components
-├── App.tsx         # Main app component
-├── main.tsx        # Entry point
-└── index.css       # Global styles
+university-platform-frontend/
+├── public/
+│   ├── apple-touch-icon.png
+│   ├── favicon-96x96.png
+│   ├── favicon.ico
+│   ├── favicon.svg
+│   ├── site.webmanifest
+│   ├── web-app-manifest-192x192.png
+│   └── web-app-manifest-512x512.png
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       ├── banner-bg.jpg
+│   │       ├── campus-life.jpg
+│   │       ├── graduation-family.jpg
+│   │       ├── hero-bg.jpg
+│   │       ├── ibnKhaldoun.jpg
+│   │       ├── professor-teaching.jpg
+│   │       └── students-group.jpg
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Button/
+│   │   │   │   ├── Button.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Card/
+│   │   │   │   ├── Card.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Footer/
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Input/
+│   │   │   │   ├── Input.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── Navbar/
+│   │   │       ├── Navbar.tsx
+│   │   │       └── index.ts
+│   │   ├── features/
+│   │   │   └── home/
+│   │   │       ├── BannerSection.tsx
+│   │   │       ├── FeaturesSection.tsx
+│   │   │       ├── GallerySection.tsx
+│   │   │       ├── HeroSection.tsx
+│   │   │       └── StatisticsSection.tsx
+│   │   └── layout/
+│   │       └── MainLayout/
+│   │           ├── MainLayout.tsx
+│   │           └── index.ts
+│   ├── pages/
+│   │   └── Home/
+│   │       ├── Home.tsx
+│   │       └── index.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .gitignore
+├── index.html
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
 ---
@@ -70,3 +126,4 @@ src/
 ## 📄 License
 
 This project is for educational purposes.
+
