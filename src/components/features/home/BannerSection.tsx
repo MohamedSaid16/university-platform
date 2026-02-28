@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Users, BookOpen, Award } from 'lucide-react';
+import Skeleton from '../../common/Skeleton';
 import bannerBg from '../../../assets/images/computer.jpg';
 
 const BannerSection: React.FC = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Skeleton Loader */}
+      {!imageLoaded && (
+        <div className="absolute inset-0">
+          <Skeleton className="w-full h-full" />
+        </div>
+      )}
+
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className={`absolute inset-0 transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <img 
           src={bannerBg} 
           alt="University Campus" 
           className="w-full h-full object-cover"
+          onLoad={() => setImageLoaded(true)}
+          loading="eager"
+          decoding="async"
         />
-        {/* Overlay خفيف جداً - 20% فقط */}
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container-custom py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text مع خلفية شفافة قليلة */}
           <div className="bg-black/10 backdrop-blur-[2px] p-8 rounded-2xl text-white">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Welcome to{' '}
@@ -49,7 +59,6 @@ const BannerSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Stats Cards مع خلفية شفافة قليلة */}
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-black/10 backdrop-blur-[2px] rounded-xl p-6 text-center border border-white/20 transform hover:scale-105 transition-all duration-300">
               <GraduationCap className="w-12 h-12 mx-auto mb-3 text-yellow-300" />
